@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+    <title>Coffee Masters</title>
+</head>
+<body>
+  
+  <header class="header_container">
+    <img class="header_container__img" src="coffee_masters_logo.png" alt="coffee masters logo">
+    <h2 class="header_container__title"> Coffee Masters</h2>
+  </header>
+  <div class="wrapper">
+  <div class="details_container">
+    <div class="details_container__items card">
+      <h3 class="details_container__items--title title">items</h3>
+      <ul class="items__container">
+        <li class="item">
+          <p class="item__qty">1x</p>
+          <div class="item__details">
+            <h4 class="item__title">Cappuccino</h4>
+            <p class="item__detail">Lite foam</p>
+          </div>
+          <p class="item__price">£3.35</p>
+        </li>
+        <li class="item">
+          <p class="item__qty">1x</p>
+          <div class="item__details">
+            <h4 class="item__title">Cappuccino</h4>
+            <p class="item__detail">Lite milk</p>
+            <p class="item__detail">Double espresso</p>
+          </div>
+          <p class="item__price">£3.85</p>
+        </li>
+        <li class="item">
+          <p class="item__qty">1x</p>
+          <div class="item__details">
+            <h4 class="item__title">Croissant</h4>
+            <p class="item__detail">Butter</p>
+          </div>
+          <p class="item__price">£2.45</p>
+        </li>
+      </ul>
+    </div>
+    <div class="name_container card">
+      <h3 class="title">name</h3>
+      <div class="label__container">
+        <label for="name" class="input-label">Name for order</label>
+        <input id="name" class="input" placeholder="Ford Perfect" />
+      </div>
+    </div>
+    <div class="payment_container card">
+      <h3 class="title">payment</h3>
+      <div class="label__container label__container--margin-bottom">
+        <label for="cardNo" class="input-label">Card number</label>
+        <input id="cardNo" class="input" placeholder="1234 5678 9012 3456" />
+      </div>
+      <div class="label__container">
+        <label for="ccv" class="input-label">CCV Number</label>
+        <input id="ccv" class="input" placeholder="001" />
+      </div>
+    </div>
+  </div>
+  <div class="totals">
+    <div class="totals__line"><span>Subtotal:</span><span>£9.65</span></div>
+    <div class="totals__line"><span>Tax:</span><span>£0.82</span></div>
+    <div class="totals__line totals__line--bold"><span>Total:</span><span>£10.47</span></div>
+  </div>
+  <button class="cta">Place order</button>
+</div>
+</body>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+.wrapper {
+  max-width: 1024px;
+  margin-inline: auto;
+}
+.header_container {
+  background-color: #412316;
+  color: #ebe1b2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.header_container__img {
+  background-color: #412316;
+  width: 30px;
+}
+.header_container__title {
+  font-family: Open Sans;
+  font-size: 1.25rem;
+}
+
+.details_container {
+  display: grid;
+  grid-template-areas: "items" "name" "payment";
+  max-width: 1024px;
+  margin-inline: auto;
+  margin-top: 50px;
+}
+.details_container__items {
+  grid-area: items;
+}
+.name_container {
+  grid-area: name;
+}
+.payment_container {
+  grid-area: payment;
+}
+.card {
+  background-color: #eee1d5;
+  font-family: Open Sans;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #e7e5e5;
+  padding: 20px;
+  margin: 20px;
+  max-width: 450px;
+  height: fit-content;
+  padding-top: 0;
+  margin-inline: auto;
+  min-width: 325px;
+}
+.title {
+  text-transform: uppercase;
+  color: #a17b57;
+  margin-left: 0;
+  margin-bottom: 25px;
+}
+.details_container__items--title {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.items__container {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+.item {
+  display: flex;
+  border-bottom: 1px solid #a17b57;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item__title {
+  margin: 0;
+}
+.item__qty {
+  margin-left: 10px;
+  margin-right: 20px;
+  font-weight: 200;
+  font-size: 14px;
+}
+.item__details {
+  flex: 2;
+}
+.item__detail {
+  color: #a17b57;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.item__price {
+  margin-right: 30px;
+}
+.label__container {
+  position: relative;
+  margin-bottom: 10px;
+}
+.input-label {
+  color: #a17b57;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  padding: 0 5px;
+  background-color: #eee1d5;
+}
+.label__container--margin-bottom {
+  margin-bottom: 25px;
+}
+.input {
+  border: 1px solid #a17b57;
+  width: 95%;
+  height: 38px;
+  border-radius: 19px;
+  padding-left: 25px;
+  background-color: #eee1d5;
+}
+
+.totals {
+    margin-top: 50px;
+    display: grid;
+    width: 320px;
+    margin-inline: auto;
+    font-family: Open Sans;
+}
+.totals__line {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.totals__line--bold {
+  font-weight: 600;;
+}
+.cta {
+  background-color: #deb993;
+  height: 40px;
+  border-radius: 20px;
+  width: 320px;
+  max-width:1024px;
+  border: none;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-bottom: 30px;
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
+  color: #6a6448;
+}
+
+@media screen and (min-width: 756px){
+  .details_container {
+    grid-template-areas: "items name" "items payment";
+    grid-template-columns: 1fr 1fr;
+  }
+  .card {
+    margin-inline: 20px;
+  }
+  .cta {
+    width: 90%;
+  }
+}
+</style>
+</html>
